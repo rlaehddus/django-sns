@@ -1,51 +1,56 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <div class="col-8">
-            <div class="card mt-4 mb-4">
-                여기는 내가 추가한 follow한 사람들 스토리 들어감
+<div class="row">
+    <div class="col-8">
+        <div class="card mt-4 mb-4">
+            여기는 내가 추가한 follow한 사람들 스토리 들어감
+        </div>
+        <div class="card mb-5">
+            <div class="card-header">
+                Featured
             </div>
-            <div class="card mb-5">
-                <div class="card-header">
-                    Featured
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-                <div class="card-footer">
-                    footer
-                </div>
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
-            <div class="card mb-6">
-                <div class="card-header">
-                    Featured
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-                <div class="card-footer">
-                    footer
-                </div>
+            <div class="card-footer">
+                footer
             </div>
         </div>
-        <div class="col-4">
-            <div class="card">
-                <div class="card-header">
-                    프로필 이미지
-                </div>
-                <div class="card-body">
-                    회원님을 위한 추천
-                </div>
-                <div class="card-footer">
-                    소개도움말홍보 센터API채용 정보개인정보처리방침약관위치인기 계정해시태그언어<br>
-                    © 2020 INSTAGRAM FROM Jehoon
-                </div>
+        <div class="card mb-6">
+            <div class="card-header">
+                Featured
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            <div class="card-footer">
+                footer
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card mt-4">
+            <div class="card-header">
+                프로필 이미지
+                {% if user.is_authenticated %}
+                    <h5 class="card-title">사용자 이름</h5>
+                    <p class="card-text">이름</p>
+                    <a href="#" class="btn btn-primary">마이페이지</a>
+                {% else %}
+                    <a href="{% url 'account_login' %}" class="btn btn-primary">로그인</a>
+                {% endif %}
+            </div>
+            <div class="card-body">
+                회원님을 위한 추천
+            </div>
+            <div class="card-footer">
+                소개도움말홍보 센터API채용 정보개인정보처리방침약관위치인기 계정해시태그언어<br>
+                © 2020 INSTAGRAM FROM Jehoon
             </div>
         </div>
     </div>
