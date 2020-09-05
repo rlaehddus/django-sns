@@ -64,8 +64,7 @@
             <div class="card mt-4 position-fixed">
                 <div class="card-body">
                     {% if user.is_authenticated %}
-                        <h5 class="card-title">사용자 이름</h5>
-                        <p class="card-text">이름</p>
+                        <h5 class="card-title">{{ user.username }}님 환영합니다.</h5>
                         <a href="#" class="btn btn-primary">마이페이지</a>
                     {% else %}
                         <a href="{% url 'account_login' %}" class="btn btn-primary">로그인</a>
@@ -73,8 +72,8 @@
                 </div>
                 <div class="card-footer">
                     <small>
-                    소개도움말홍보 센터API채용 정보개인정보처리방침약관위치인기 계정해시태그언어<br>
-                    © 2020 INSTAGRAM FROM Jehoon
+                    
+                    © 2020 DJANGO_SNS FROM Jehoon
                     </small>
                 </div>
             </div>
