@@ -2,7 +2,7 @@
     <p>
         <b>{{ comment.user.username }}</b>
         {% if user == comment.user %}
-            <a href="#" class="right comment-delete-button" id="comment-delete-{{ comment.pk }}" data-comment-id="{{ comment.pk }}">삭제</a>
+            <a href="{% url 'posts:delete_comment' comment.id %}" class="right comment-delete-button" id="comment-delete-{{ comment.pk }}" data-comment-id="{{ comment.pk }}">삭제</a>
         {% endif %}
     </p>
     <p>{{ comment.content }}</p>
